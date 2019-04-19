@@ -26,9 +26,10 @@
 #include <opencv2/highgui.hpp>
 
 #include "nlohmann/json.hpp"
+#include "g3log/g3log.hpp"
 
-#include "Camera.h"
-#include "ImageSize.h"
+#include "libvideoio/types/Camera.h"
+#include "libvideoio/types/ImageSize.h"
 
 #include <tinyxml2.h>
 

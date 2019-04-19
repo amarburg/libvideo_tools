@@ -14,7 +14,7 @@ namespace fs = boost::filesystem;
 
 
 #include "FileUtils.h"
-#include "ImageSize.h"
+#include "libvideoio/types/ImageSize.h"
 
 #include "logger/LogReader.h"
 
