@@ -9,3 +9,5 @@
 
 #define PTAM_JSON (TEST_DATA_DIR"/PTAM_calibration.json")
 #define PTAM_LEGACY (TEST_DATA_DIR"/PTAM_calibration.txt")
+
+#define ROS_YAML (TEST_DATA_DIR"/18296567.yaml")

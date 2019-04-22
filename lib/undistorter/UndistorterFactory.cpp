@@ -25,13 +25,24 @@
 
 #include <fstream>
 
+#include <boost/filesystem.hpp>
+
 namespace libvideoio
 {
 
+namespace fs = boost::filesystem;
 
 Undistorter* UndistorterFactory::getUndistorterFromFile(const std::string &configFileName, const std::shared_ptr<Undistorter> & wrap )
 {
 	LOG(INFO) << "Attempting to determine type calibration from file ..." << configFileName;
+
+	fs::path filepath(configFileName);
+
+	// TODO.  Make this much more robust...
+	if( filepath.extension() == ".yaml"  || filepath.extension() == ".yml" ) {
+		// TODO.  Add exception/error catching
+		return ROSUndistorterFactory::loadFromFile( configFileName, wrap );
+	}
 
 	std::ifstream f(configFileName);
 

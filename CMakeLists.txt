@@ -14,7 +14,7 @@ find_package( Eigen3 REQUIRED )
 
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 find_package( TinyXML2 REQUIRED )
-
+find_package( yaml-cpp REQUIRED )
 
 EXECUTE_PROCESS( COMMAND uname -m COMMAND tr -d '\n' OUTPUT_VARIABLE ARCHITECTURE )
 message( STATUS "Architecture: ${ARCHITECTURE}" )
@@ -63,7 +63,8 @@ set( VIDEOIO_INCLUDE_DIRS
 	third_party
   ${OpenCV_INCLUDE_DIRS}
 	${TINYXML2_INCLUDE_DIR}
-	${EIGEN3_INCLUDE_DIR} )
+	${EIGEN3_INCLUDE_DIR}
+  ${YAML_CPP_INCLUDE_DIR} )
 fips_include_directories( ${VIDEOIO_INCLUDE_DIRS} )
 
 fips_add_subdirectory("lib/")

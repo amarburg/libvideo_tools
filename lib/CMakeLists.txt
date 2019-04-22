@@ -7,7 +7,8 @@ file(GLOB VIDEOIO_SOURCE_FILES *.cpp
 fips_begin_module( videoio )
   fips_files( ${VIDEOIO_SOURCE_FILES} )
   fips_libs( ${Boost_LIBRARIES} ${OpenCV_LIBS}
-             ${ZLIB_LIBRARIES} ${TINYXML2_LIBRARIES} )
+            ${ZLIB_LIBRARIES} ${TINYXML2_LIBRARIES}
+            ${YAML_CPP_LIBRARIES} )
   fips_deps( g3logger )
 
   include_directories(

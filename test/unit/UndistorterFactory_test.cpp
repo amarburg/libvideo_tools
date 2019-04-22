@@ -30,4 +30,13 @@ TEST( UndistorterFactory, LoadPhotoscanXML ) {
   // cout << "Processed K:" << endl << undistorter->getK() << endl;
 }
 
+TEST( UndistorterFactory, LoadROSYaml ) {
+
+  std::shared_ptr<Undistorter> undistorter( UndistorterFactory::getUndistorterFromFile( ROS_YAML ) );
+  ASSERT_TRUE( (bool)undistorter );
+
+  // cout << "Original K:" << endl << undistorter->getOriginalK() << endl;
+  // cout << "Processed K:" << endl << undistorter->getK() << endl;
+}
+
 }

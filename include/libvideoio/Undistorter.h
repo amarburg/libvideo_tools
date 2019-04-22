@@ -165,6 +165,11 @@ public:
 	static OpenCVUndistorter *loadFromFile( const std::string &filename, const std::shared_ptr<Undistorter> & wrap  = nullptr );
 };
 
+class ROSUndistorterFactory : public UndistorterFactory {
+public:
+	static OpenCVUndistorter *loadFromFile( const std::string &filename, const std::shared_ptr<Undistorter> & wrap  = nullptr );
+};
+
 
 
 //=== Legacy Undistorter classes ===
