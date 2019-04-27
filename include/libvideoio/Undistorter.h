@@ -95,6 +95,13 @@ public:
 											const ImageSize &origSize,
 										  const std::shared_ptr<Undistorter> & wrap  = nullptr );
 
+	OpenCVUndistorter( const cv::Mat &origK,
+											const cv::Mat &projection,
+											const cv::Mat &rectification,
+											const cv::Mat &distCoeff,
+											const ImageSize &origSize,
+										  const std::shared_ptr<Undistorter> & wrap  = nullptr );
+
 	virtual ~OpenCVUndistorter();
 
 	/**
@@ -116,6 +123,8 @@ public:
 	virtual ImageSize inputImageSize() const  { return _inputSize; }
 	virtual ImageSize outputImageSize() const  { return _outputSize; }
 
+	const cv::Vec3d baseline() const { return _baseline; }
+
 	/**
 	 * Returns if the undistorter was initialized successfully.
 	 */
@@ -125,6 +134,8 @@ protected:
 
 	cv::Mat _K, _originalK;
 	cv::Mat _distCoeffs;
+
+	cv::Vec3d _baseline;
 
 	ImageSize _inputSize, _outputSize;
 	cv::Mat _map1, _map2;
